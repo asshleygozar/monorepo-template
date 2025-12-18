@@ -1,0 +1,60 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "API for GearUp",
+    "main": "dist/index.js",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "db:migrate": "npx prisma migrate dev",
+        "db:pull": "npx prisma db pull",
+        "db:generate": "npx prisma generate",
+        "db:studio": "npx prisma studio",
+        "db:seed": "node src/db/seed.ts",
+        "dev": "cross-env APP_STAGE=dev tsx --watch src/index.ts",
+        "test": "cross-env APP_STAGE=test vitest run",
+        "start": "node dist/index.js",
+        "build": "tsc"
+    },
+    "author": "",
+    "license": "ISC",
+    "imports": {
+        "#*": "./dist/*"
+    },
+    "prisma": {
+        "schema": "./prisma/schema.prisma"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^10.1.0",
+        "@tsconfig/node22": "^22.0.2",
+        "@types/cookie-parser": "^1.4.10",
+        "@types/cors": "^2.8.19",
+        "@types/express": "^5.0.6",
+        "@types/node": "^24.9.1",
+        "@types/passport-google-oauth20": "^2.0.17",
+        "@types/supertest": "^6.0.3",
+        "cross-env": "^10.1.0",
+        "esbuild": "^0.27.0",
+        "esbuild-register": "^3.6.0",
+        "nodemon": "^3.1.10",
+        "prisma": "^7.0.1",
+        "supertest": "^7.1.4",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.20.6",
+        "typescript": "^5.9.3",
+        "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "@prisma/adapter-pg": "^7.0.1",
+        "@prisma/client": "^7.0.1",
+        "bcryptjs": "^3.0.2",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.3",
+        "express": "^5.1.0",
+        "express-rate-limit": "^8.2.1",
+        "helmet": "^8.1.0",
+        "jose": "^6.1.0",
+        "zod": "^4.1.12"
+    }
+}
